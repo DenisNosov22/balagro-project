@@ -1,8 +1,8 @@
 .header{
   position:sticky;top:0;z-index:50;
-  background:rgba(11,15,12,.75);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid var(--border);
+  background:var(--surface-strong);
+  backdrop-filter: blur(12px);
+  border-bottom:1px solid var(--border-strong);
 }
 .header__inner{
   display:flex;align-items:center;
@@ -12,8 +12,8 @@
 .logo{font-weight:800;letter-spacing:.2px}
 .nav{display:flex;gap:16px;align-items:center}
 .nav{margin-left:auto}
-.nav a{color:var(--muted)}
-.nav a:hover{color:var(--text)}
+.nav a{color:#d4e2d9;transition:color .2s ease, opacity .2s ease}
+.nav a:hover{color:var(--text-strong);opacity:1}
 .nav__home{
   font-size:18px;
   line-height:1;
@@ -33,11 +33,18 @@
   width:44px;
   height:44px;
   border-radius:12px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.04);
-  color:var(--text);
+  border:1px solid var(--border-strong);
+  background:var(--surface);
+  color:var(--text-strong);
   cursor:pointer;
   font-size:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,.22);
+  transition:transform .18s ease, border-color .18s ease, filter .18s ease;
+}
+.cart-toggle:hover{
+  transform:translateY(-1px);
+  border-color:rgba(49,210,106,.42);
+  filter:brightness(1.03);
 }
 .cart-toggle__badge{
   position:absolute;
@@ -59,7 +66,8 @@
 .mobile-nav{
   display:none;
   padding:12px 16px;
-  border-top:1px solid var(--border);
+  border-top:1px solid var(--border-strong);
+  background:var(--surface-strong);
 }
-.mobile-nav a{display:block;padding:10px 0;color:var(--muted)}
-.mobile-nav a:hover{color:var(--text)}
+.mobile-nav a{display:block;padding:10px 0;color:#d3e1d8}
+.mobile-nav a:hover{color:var(--text-strong)}

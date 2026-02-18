@@ -9,17 +9,52 @@
   --border:rgba(255,255,255,.08);
   --shadow: 0 10px 30px rgba(0,0,0,.35);
   --radius:18px;
+  --surface-soft:rgba(11,24,18,.62);
+  --surface:rgba(10,22,17,.78);
+  --surface-strong:rgba(9,18,14,.9);
+  --surface-elevated:rgba(11,24,18,.94);
+  --border-strong:rgba(233,240,234,.16);
+  --ring:rgba(49,210,106,.2);
+  --text-strong:#f4faf6;
 }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 700px at 20% -10%, rgba(49,210,106,.18), transparent 55%),
+  background: linear-gradient(to bottom, rgba(135,206,235,.55) 0%, rgba(135,206,235,.55) 60%, rgba(76,175,80,.45) 60%, rgba(46,125,50,.45) 100%),
+              url('../../images/fon_image.jpg') center/cover no-repeat,
+              radial-gradient(1200px 700px at 20% -10%, rgba(49,210,106,.18), transparent 55%),
               radial-gradient(900px 600px at 90% 10%, rgba(49,210,106,.10), transparent 55%),
               var(--bg);
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
   color:var(--text);
   line-height:1.5;
+  text-rendering:optimizeLegibility;
+}
+
+body::before{
+  content:"";
+  position:absolute;
+  top:50px;
+  left:-200px;
+  width:300px;
+  height:80px;
+  background:#fff;
+  border-radius:50px;
+  opacity:.8;
+  animation:cloudsMove 40s linear infinite;
+  box-shadow:100px 20px #fff,
+             200px 0 #fff,
+             150px -20px #fff;
+  pointer-events:none;
+}
+
+@keyframes cloudsMove{
+  from{transform:translateX(0)}
+  to{transform:translateX(150vw)}
 }
 
 body.landing-page{
