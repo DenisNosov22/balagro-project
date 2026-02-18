@@ -1,7 +1,7 @@
 .cart-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.35);
+  background:rgba(0,0,0,.48);
   opacity:0;
   pointer-events:none;
   transition:opacity .2s ease;
@@ -18,8 +18,8 @@
   right:16px;
   width:min(360px, calc(100vw - 24px));
   max-height:70vh;
-  background:rgba(11,15,12,.92);
-  border:1px solid var(--border);
+  background:var(--surface-elevated);
+  border:1px solid var(--border-strong);
   border-radius:var(--radius);
   padding:14px;
   transform:translateY(-10px);
@@ -36,20 +36,20 @@
 .cart__head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
 .cart__list{display:flex;flex-direction:column;gap:10px;max-height:340px;overflow:auto;padding-right:6px}
 .cartItem{
-  border:1px solid var(--border);
+  border:1px solid var(--border-strong);
   border-radius:14px;
   padding:10px;
   display:flex;
   flex-direction:column;
   gap:8px;
-  background:rgba(0,0,0,.18);
+  background:var(--surface);
 }
 .cartItem__row{display:flex;justify-content:space-between;gap:10px}
 .qty{
   display:flex;gap:8px;align-items:center;flex-wrap:wrap
 }
 .qty button{
-  background:transparent;border:1px solid var(--border);color:var(--text);
+  background:rgba(8,18,14,.84);border:1px solid var(--border-strong);color:var(--text);
   width:32px;height:32px;border-radius:10px;cursor:pointer;
 }
 .qty button:hover{border-color:rgba(49,210,106,.35)}
@@ -59,7 +59,7 @@
 .order-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.45);
+  background:rgba(0,0,0,.56);
   opacity:0;
   pointer-events:none;
   transition:opacity .2s ease;
@@ -80,8 +80,8 @@
   overflow:auto;
   padding:16px;
   border-radius:var(--radius);
-  border:1px solid var(--border);
-  background:rgba(11,15,12,.95);
+  border:1px solid var(--border-strong);
+  background:var(--surface-elevated);
   opacity:0;
   pointer-events:none;
   transition:opacity .2s ease, transform .2s ease;
@@ -104,8 +104,8 @@
   width:36px;
   height:36px;
   border-radius:10px;
-  border:1px solid var(--border);
-  background:transparent;
+  border:1px solid var(--border-strong);
+  background:rgba(8,18,14,.84);
   color:var(--text);
   cursor:pointer;
 }
